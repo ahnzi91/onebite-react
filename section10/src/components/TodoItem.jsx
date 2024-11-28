@@ -20,16 +20,18 @@ const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
   );
 };
 
-export default memo(TodoItem, (prevProps, nextProps) => {
-  // 반환값에 따라 Props가 바뀌었는지 안바뀌었는지 판단
-  // true : Props 바뀌지 않음 -> 리렌더링 X
-  // false : Props 바뀜 -> 리렌더링 O
+// export default memo(TodoItem, (prevProps, nextProps) => {
+// 반환값에 따라 Props가 바뀌었는지 안바뀌었는지 판단
+// true : Props 바뀌지 않음 -> 리렌더링 X
+// false : Props 바뀜 -> 리렌더링 O
 
-  if (prevProps.id !== nextProps.id) return false;
-  if (prevProps.isDone !== nextProps.isDone) return false;
-  if (prevProps.content !== nextProps.content) return false;
-  if (prevProps.date !== nextProps.date) return false;
+// if (prevProps.id !== nextProps.id) return false;
+// if (prevProps.isDone !== nextProps.isDone) return false;
+// if (prevProps.content !== nextProps.content) return false;
+// if (prevProps.date !== nextProps.date) return false;
 
-  // id, isDone, content, date가 바뀌지 않았다면 true 리턴
-  return true;
-});
+// id, isDone, content, date가 바뀌지 않았다면 true 리턴
+// return true;
+// });
+
+export default memo(TodoItem);
